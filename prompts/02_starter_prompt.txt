@@ -1,13 +1,65 @@
-Build the RGBW Control App following the specifications in #[[file:docs/requirements.md]].
+I need you to act as my development assistant to build a new Chrome extension from scratch. The project is currently empty except for a /docs folder.
 
-Follow the {methodology} defined in the steering rules.
+High-Level Goal: Create a Chrome extension that, when the user clicks its icon in the toolbar, opens a popup window containing a fully playable, classic Space Invaders game.
 
-Key requirements:
-- Read and follow ALL specifications in docs/requirements.md
-- Adhere to the technology stack and constraints specified
-- Respect the "Out of Scope" section - do NOT implement excluded features
-- Follow the file generation order provided
-- Avoid common pitfalls listed in the requirements
-- Use the specified code style preferences
+Critical Requirements (Must-Haves): This is the most important part. Before writing any code, you must read, parse, and strictly adhere to all guidelines, constraints, and policies outlined in the following project files:
 
-Ask for the Shelly bulb IP address before testing any bulb integration.
+/docs/intent-integrity-chain.md
+
+/docs/requirements.md
+
+Furthermore, the entire extension must be built to be packageable (as a .zip file) and fully compliant with the latest Google Chrome Web Store policies for a successful submission.
+
+Files to Generate:
+
+manifest.json (Root Folder)
+
+Use manifest_version: 3.
+
+Define the name (e.g., "Space Invaders Popup") and description (e.g., "Play a classic game of Space Invaders directly from your toolbar.").
+
+Set version to "1.0.0".
+
+Configure the action to use popup.html as the default_popup.
+
+Define paths for icons (16x16, 48x48, and 128x128). You can just set the paths (e.g., /icons/icon16.png), and I will add the physical image files later.
+
+popup.html (Root Folder)
+
+This file will be the game's container.
+
+It should include a <canvas> element where the game will be rendered.
+
+It needs to link to popup.css and popup.js.
+
+Keep the HTML minimal. A body with just the canvas is perfect.
+
+popup.css (Root Folder)
+
+Style the popup to have a fixed, appropriate size for the game (e.g., 480x640 pixels).
+
+Ensure the body and html have no margin or padding and that the canvas fits perfectly to prevent scrollbars.
+
+Give the game a classic black background.
+
+popup.js (Root Folder)
+
+This file will contain the entire Space Invaders game logic.
+
+It must be written in vanilla JavaScript and interact with the <canvas> element from popup.html.
+
+Please implement the full game loop, including:
+
+Drawing the player ship, aliens (in a grid), and shields.
+
+Player movement (left/right) and shooting.
+
+Alien grid movement (side-to-side, dropping down) and shooting.
+
+Collision detection for all projectiles.
+
+A simple score and lives system.
+
+Basic game state management (start screen, game over).
+
+Please generate these four files and place them in the project's root directory, ensuring all code adheres to the constraints found in the /docs files.
